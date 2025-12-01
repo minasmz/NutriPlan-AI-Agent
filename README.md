@@ -7,7 +7,7 @@
 An Intelligent Multi-Agent Nutrition Assistant Powered by Google ADK & Gemini
 
 NutriPlan AI is a fully featured **multi-agent system** designed to generate safe, personalized daily meal plans, compute macronutrients, and retrieve real-world nutrition facts via search.  
-It demonstrates practical use of **LLM‑powered agents**, **sequential workflows**, **custom tools**, **memory reasoning**, **observability**, and **automated evaluation**—all key concepts taught in the Google ADK course.
+It demonstrates practical use of **LLM‑powered agents**, **sequential workflows**, **custom tools**, **memory reasoning**, **observability**, and **automated evaluation**.
 
 I personally built this project because I often struggle with the everyday question:  
 **“What should I eat today?”**  
