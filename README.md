@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src=https://github.com/minasmz/NutriPlan-AI-Agent/blob/main/images/Logo%20design%20for%20NutriPlan%20AI.png width="300">
+</p>
+
 # 🥗 NutriPlan AI  
 An Intelligent Multi-Agent Nutrition Assistant Powered by Google ADK & Gemini
 
@@ -11,18 +16,20 @@ NutriPlan AI answers that question with structure, safety, and intelligence.
 ---
 
 # 📌 Table of Contents
-- [Project Overview](#project-overview)
+- [Project Overview](#-project-overview)
+- [Demo](#-demo)
 - [Installation](#installation)
 - [Running the Agent](#running-the-agent)
 - [Project Architecture](#project-architecture)
-- [Multi-Agent Design](#multi-agent-design)
-- [Tooling](#tooling)
-- [Memory & Context Handling](#memory--context-handling)
-- [Observability & Logging](#observability--logging)
-- [Evaluation](#evaluation)
-- [Project Structure](#project-structure)
-- [Requirements](#requirements)
-- [License](#license)
+- [Multi-Agent Design](#-multi-agent-design)
+- [Tooling](#-tooling)
+- [Memory & Context Handling](#-memory--context-handling)
+- [Safety Guardrails](#-safety-guardrails)
+- [Observability & Logging](#-observability--logging)
+- [Evaluation](#-evaluation)
+- [Project Structure](#-project-structure)
+- [Requirements](#-requirements)
+- [License](#-license)
 
 ---
 
@@ -42,17 +49,32 @@ The system is built to be:
 - **Modular** — each agent handles one responsibility  
 - **Safe** — strict calorie guardrails prevent harmful recommendations  
 - **Intuitive** — detects greetings, help requests, farewells, nutrition queries, and plan requests  
-- **Extensible** — additional tools or agents can be plugged in seamlessly  
+- **Extensible** — additional tools or agents can be plugged in seamlessly
+  
+---
+
+# 🤖 Demo
+
+- A suggested plan based on 1500 calories and no dietary restrictions
+![1500None](https://github.com/minasmz/NutriPlan-AI-Agent/blob/main/images/1500cal_none.png)
+
+
+- A suggested vegeterian plan based on 1800 calories
+![1500None](https://github.com/minasmz/NutriPlan-AI-Agent/blob/main/images/1800%20calories%20vegeterian.png)
+
+
+- Google Search Response for Food Macro Query 
+![googlesearch](https://github.com/minasmz/NutriPlan-AI-Agent/blob/main/images/google%20search.png) 
 
 ---
 
-# 🛠️ Installation
+# Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/nutriplan-ai.git
-cd nutriplan-ai
+git clone https://github.com/minasmz/nutriplan-ai-agent.git
+cd nutriplan-ai-agent
 ```
 
 Create (optional) a virtual environment:
@@ -70,7 +92,7 @@ pip install "google-adk[all]"
 
 ---
 
-# ▶️ Running the Agent
+# Running the Agent
 
 Inside the project folder:
 
@@ -82,13 +104,14 @@ This launches your full NutriPlan AI assistant.
 
 ---
 
-# 🏗️ Project Architecture
+# Project Architecture
 
 NutriPlan AI is built using a **root router agent** that delegates every user message to the appropriate sub-agent:
 
 ```
 User → Root Agent → {Greeting, Help, Preprocess, Meal Planner, Nutrition Search, Farewell}
 ```
+![Architecture Diagram](https://github.com/minasmz/NutriPlan-AI-Agent/blob/main/images/overview.png)
 
 ### High-Level Flow
 
@@ -154,6 +177,8 @@ Used by `NutritionSearchAgent` to answer questions like:
 - “How many calories are in an avocado?”
 - “Is brown rice higher in fiber than white rice?”
 
+![googlesearch](https://github.com/minasmz/NutriPlan-AI-Agent/blob/main/images/google%20search.png)
+
 ---
 
 # 🧵 Memory & Context Handling
@@ -180,6 +205,8 @@ The agent returns a medical safety warning instead.
 
 This demonstrates safe LLM deployment practices.
 
+![guardrails](https://github.com/minasmz/NutriPlan-AI-Agent/blob/main/images/gaurdrails.png)
+
 ---
 
 # 📊 Observability & Logging
@@ -204,6 +231,8 @@ ADK automatically outputs:
 ```bash
 tail -F /path/to/agents_log/agent.latest.log
 ```
+
+![logInfo](https://github.com/minasmz/NutriPlan-AI-Agent/blob/main/images/log%20info.png)
 
 ---
 
@@ -256,10 +285,12 @@ nutriplan-ai/
 
 # 📎 Requirements
 
-- Python 3.10+
+- Python 3.11+
 - google-adk  (installed via pip)
 - Gemini API key configured as:
   - `GOOGLE_API_KEY`
+
+---
 
 ---
 
@@ -268,7 +299,11 @@ nutriplan-ai/
 This project is released under the MIT License.  
 Feel free to fork, extend, remix, and build upon it.
 
+This work was developed as part of the **Kaggle Agents Intensive Capstone Project**:  
+🔗 https://www.kaggle.com/competitions/agents-intensive-capstone-project/
+
 ---
 
 If you use this project or build on it, I’d love to hear about it!  
-Happy hacking 🎉  
+Happy learning! 🎉
+
